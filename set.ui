@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>set</class>
+ <widget class="QWidget" name="set">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>480</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>480</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>-1</x>
+     <y>-2</y>
+     <width>801</width>
+     <height>482</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>801</width>
+     <height>482</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>801</width>
+     <height>482</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QFrame#frame{background-image: url(:/aaa.jpg);}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QSlider" name="brightness">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>90</y>
+      <width>70</width>
+      <height>300</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>70</width>
+      <height>300</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>70</width>
+      <height>300</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QSlider::groove:vertical{border: 0px solid #bbb;}
+QSlider::add-page:vertical{background-color: rgb(32, 74, 135);border-radius: 15px; }
+QSlider::sub-page:vertical{background-color: rgb(114, 159, 207);border-radius: 15px;}
+QSlider::handle:vertical {border-image: url(:/image/brightness.png);height: 60px; margin-top:-30px;margin-bottom:-30px;}
+QSlider::handle:vertical:hover{border-image: url(:/image/brightness.png);height: 60px;margin-top:-30px;margin-bottom:-30px;}</string>
+    </property>
+    <property name="maximum">
+     <number>25</number>
+    </property>
+    <property name="pageStep">
+     <number>1</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="return_2">
+    <property name="geometry">
+     <rect>
+      <x>-1</x>
+      <y>-2</y>
+      <width>111</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border-image: url(:/image/return.png);
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="zzjc">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>110</y>
+      <width>150</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>150</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>150</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	
+	border-image: url(:/image/switch close.png);
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>110</y>
+      <width>100</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+border:none;
+background:transparent;
+border-radius: 15px;
+font-size:24px;
+color: rgb(238, 238, 236);
+}</string>
+    </property>
+    <property name="text">
+     <string>坐姿检测</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>270</y>
+      <width>200</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>200</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>200</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{background-color: rgb(114, 159, 207);font-size:24px;}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QSlider" name="music">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>90</y>
+      <width>70</width>
+      <height>300</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>70</width>
+      <height>300</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>70</width>
+      <height>300</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QSlider::groove:vertical{
+border: 0px solid #bbb;
+}
+QSlider::add-page:vertical{
+background-color: rgb(32, 74, 135);
+border-radius: 15px; 
+}
+QSlider::sub-page:vertical{
+background-color: rgb(114, 159, 207);
+border-radius: 15px;
+}
+QSlider::handle:vertical {
+border-image: url(:/image/music.png);
+height: 60px; 
+margin-top:-30px;
+margin-bottom:-30px;
+}
+QSlider::handle:vertical:hover{
+border-image: url(:/image/music.png);
+height: 60px;
+margin-top:-30px;
+margin-bottom:-30px;
+}</string>
+    </property>
+    <property name="maximum">
+     <number>25</number>
+    </property>
+    <property name="pageStep">
+     <number>1</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

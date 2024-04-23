@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/">
+        <file>aaa.jpg</file>
+        <file>image/+.png</file>
+        <file>image/brightness.png</file>
+        <file>image/capture.png</file>
+        <file>image/led.png</file>
+        <file>image/led0.png</file>
+        <file>image/return.png</file>
+        <file>image/set.png</file>
+        <file>image/switch close.png</file>
+        <file>image/switchopen.png</file>
+        <file>image/timebright.png</file>
+        <file>gif/voice_effect.gif</file>
+        <file>image/AI.png</file>
+        <file>icons/indicator1.png</file>
+        <file>icons/indicator2.png</file>
+        <file>image/music.png</file>
+    </qresource>
+</RCC>
