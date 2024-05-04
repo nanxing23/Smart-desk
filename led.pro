@@ -25,6 +25,7 @@ SOURCES += \
     audiorecorder.cpp \
     capture.cpp \
     capture_thread.cpp \
+    file.cpp \
     led_pwm.cpp \
     main.cpp \
     myclock.cpp \
@@ -44,6 +45,7 @@ HEADERS += \
     audiorecorder.h \
     capture.h \
     capture_thread.h \
+    file.h \
     led_pwm.h \
     myclock.h \
     mymain.h \
@@ -58,6 +60,7 @@ HEADERS += \
 
 FORMS += \
     capture.ui \
+    file.ui \
     led_pwm.ui \
     mytimer.ui \
     set.ui \

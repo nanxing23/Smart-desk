@@ -31,6 +31,7 @@ public:
     QPushButton *week;
     QPushButton *capturebutton;
     QPushButton *aichat;
+    QPushButton *file;
 
     void setupUi(QWidget *Widget)
     {
@@ -125,6 +126,14 @@ public:
         aichat->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	border-image: url(:/image/AI.png);\n"
 "}"));
+        file = new QPushButton(frame);
+        file->setObjectName(QString::fromUtf8("file"));
+        file->setGeometry(QRect(590, 40, 100, 100));
+        file->setMinimumSize(QSize(100, 100));
+        file->setMaximumSize(QSize(100, 100));
+        file->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	border-image: url(:/image/file.png);\n"
+"}"));
 
         retranslateUi(Widget);
 
@@ -143,6 +152,7 @@ public:
         week->setText(QString());
         capturebutton->setText(QString());
         aichat->setText(QString());
+        file->setText(QString());
     } // retranslateUi
 
 };

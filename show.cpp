@@ -10,6 +10,7 @@ Show::Show(QWidget *parent)
     if(my_capture == nullptr){my_capture = new capture(this);my_capture->setVisible(false);}
     if(my_timer == nullptr){my_timer = new Mytimer(this);my_timer->setVisible(false);}
     if(my_aichat == nullptr){my_aichat = new AIchat();my_aichat->setVisible(false);}
+    if(my_file == nullptr){my_file = new File(this);my_file->setVisible(false);}
     if(my_set == nullptr){my_set = new set(this);my_set->setVisible(false);}
     mymain->setVisible(true);
 

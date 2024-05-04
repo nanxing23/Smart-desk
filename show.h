@@ -8,6 +8,7 @@
 #include "capture.h"
 #include "aichat.h"
 #include "slidepage.h"
+#include "file.h"
 #include "mymain.h"/*全局变量*/
 #include <QWidget>
 

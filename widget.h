@@ -15,6 +15,7 @@
 #include "mytimer.h"
 #include "capture.h"
 #include "aichat.h"
+#include "file.h"
 #include "slidepage.h"
 
 
@@ -54,6 +55,8 @@ private slots:
     void on_capturebutton_clicked();
 
     void on_aichat_clicked();
+
+    void on_file_clicked();
 
 private:
     Ui::Widget *ui;

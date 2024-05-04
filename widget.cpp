@@ -2,7 +2,7 @@
 #include "widget.h"
 #include "ui_widget.h"
 #include <QDateTime>
-#include "mymain.h"/*全局变量*/
+#include "mymain.h"     /*全局变量*/
 #include <QDebug>
 
 
@@ -145,3 +145,14 @@ void Widget::on_aichat_clicked()
 }
 
 
+
+void Widget::on_file_clicked()
+{
+    mymain->setVisible(false);
+    my_set->setVisible(false);
+    my_ledp->setVisible(false);
+    my_capture->setVisible(false);
+    my_timer->setVisible(false);
+    my_aichat->setVisible(false);
+    my_file->setVisible(true);
+}

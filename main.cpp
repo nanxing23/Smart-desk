@@ -4,6 +4,7 @@
 #include "mymain.h"
 #include "aichat.h"
 #include "show.h"
+#include "file.h"
 
 
 #include <QApplication>
@@ -14,6 +15,7 @@ set *my_set= nullptr;/*设置界面*/
 capture *my_capture= nullptr;/*摄像头界面*/
 Mytimer *my_timer= nullptr;/*时间界面*/
 AIchat  *my_aichat = nullptr;/*声音界面*/
+File *my_file = nullptr;/*文件夹界面*/
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
