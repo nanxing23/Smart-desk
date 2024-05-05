@@ -13,19 +13,16 @@ QString insertNewlinesEveryNCharacters(const QString &str, int n);/*强制加换
 AIchat::AIchat(QWidget *parent)
     : QWidget(parent)
 {
+    my_back = new QWidget(this);
 
-    this->setGeometry(0, 0, 800, 480);
-    this->setStyleSheet("background:#14161a");//14161a
+    my_back->setGeometry(0, 0, 800, 480);
+    my_back->setStyleSheet("background:#14161a");//14161a
 
     mainWidget = new QWidget(this);
     movieWidget = new QWidget(this);
 
     movieLabel = new QLabel(this);
     textLabel = new QLabel(this);
-
-    return_2 = new QPushButton(this);
-    return_2->setGeometry(-1,-2,111,101);
-    return_2->setStyleSheet("QPushButton{border-image: url(:/image/return.png);}");
 
     userLabel = new QLabel(this);/*对板子说的话*/
     fanLabel = new QLabel(this);/*回话*/
@@ -82,7 +79,6 @@ AIchat::AIchat(QWidget *parent)
     connect(timer1, SIGNAL(timeout()), this, SLOT(onTimer1TimeOut()));
     connect(timer2, SIGNAL(timeout()), this, SLOT(onTimer2TimeOut()));
     connect(timer3, SIGNAL(timeout()), this, SLOT(onTimer3TimeOut()));
-    connect(return_2,SIGNAL(clicked()),this,SLOT(on_return_2_clicked()));
 
     /* 自定义的录音类 */
     myAudioRecorder = new AudioRecorder(this);
@@ -95,6 +91,7 @@ AIchat::AIchat(QWidget *parent)
 
     connect(myAsryin, SIGNAL(asrReadyData(QString)), this, SLOT(onAsrReadyData(QString)));/*读取完数据后发送信号,槽函数发送识别结果*/
     connect(asr, SIGNAL(asrReadyData(QString)), this, SLOT(onAsrReadyDatas(QString)));/*聊天ＡＩ处理完成发送信号,槽函数发送识别结果*/
+
 
 }
 
@@ -147,14 +144,6 @@ void AIchat::onTimer3TimeOut()
     timer3->stop();
 }
 
-void AIchat::on_return_2_clicked(){
-    mymain->setVisible(true);
-    my_set->setVisible(false);
-    my_ledp->setVisible(false);
-    my_capture->setVisible(false);
-    my_timer->setVisible(false);
-    my_aichat->setVisible(false);
-}
 
 void AIchat::onAsrReadyData(QString str)
 {

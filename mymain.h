@@ -11,5 +11,6 @@ extern capture *my_capture;
 extern Mytimer *my_timer;
 extern AIchat *my_aichat;
 extern File *my_file;/*文件夹界面*/
+extern YDragButton *my_YDragButton;
 extern int clockflash;
 #endif // MYMAIN_H

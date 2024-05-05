@@ -22,7 +22,6 @@ class Ui_led_pwm
 {
 public:
     QFrame *frame;
-    QPushButton *return_2;
     MySlider *ledslider;
     QPushButton *closeled;
 
@@ -41,12 +40,6 @@ public:
         frame->setStyleSheet(QString::fromUtf8("QFrame#frame{background-image: url(:/aaa.jpg);}"));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
-        return_2 = new QPushButton(frame);
-        return_2->setObjectName(QString::fromUtf8("return_2"));
-        return_2->setGeometry(QRect(-1, -2, 111, 101));
-        return_2->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"	border-image: url(:/image/return.png);\n"
-"}"));
         ledslider = new MySlider(frame);
         ledslider->setObjectName(QString::fromUtf8("ledslider"));
         ledslider->setGeometry(QRect(160, 130, 500, 70));
@@ -77,7 +70,6 @@ public:
     void retranslateUi(QWidget *led_pwm)
     {
         led_pwm->setWindowTitle(QApplication::translate("led_pwm", "Form", nullptr));
-        return_2->setText(QString());
         closeled->setText(QString());
     } // retranslateUi
 

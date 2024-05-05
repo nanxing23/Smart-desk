@@ -9,6 +9,8 @@ set::set(QWidget *parent) :
     ui(new Ui::set)
 {
     ui->setupUi(this);
+    ui->label_2->setAlignment(Qt::AlignCenter);/*设置文本居中*/
+
     /*获取当前屏幕的值，并设置滑块位置*/
     processbn->start("/home/root/device/device/brightness");
     processbn->waitForFinished();
@@ -18,23 +20,16 @@ set::set(QWidget *parent) :
     ui->brightness->setValue(num);
 
     connect(this,SIGNAL(sendjcflash(bool)),my_capture,SLOT(getjcflash(bool)));
+    connect(mymain, SIGNAL(sendcputemp(QString)), this, SLOT(showcputemp(QString)));/*传递cpu温度信息*/
+
+    my_YDragButton->show();
+    my_YDragButton->raise();
 
 }
 
 set::~set()
 {
     delete ui;
-}
-
-
-void set::on_return_2_clicked()
-{
-    mymain->setVisible(true);
-    my_set->setVisible(false);
-    my_ledp->setVisible(false);
-    my_capture->setVisible(false);
-    my_timer->setVisible(false);
-    my_aichat->setVisible(false);
 }
 
 void set::on_brightness_valueChanged(int value)
@@ -68,4 +63,9 @@ void set::on_zzjc_clicked(bool checked)
     }else{
         ui->zzjc->setStyleSheet("QPushButton{border-image: url(:/image/switch close.png);}");
     }
+}
+
+void set::showcputemp(QString temp){
+    ui->label_2->setText(temp);
+    ui->label_2->setAlignment(Qt::AlignCenter);/*设置文本居中*/
 }

@@ -12,7 +12,6 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
-#include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 
@@ -22,7 +21,6 @@ class Ui_Widget
 {
 public:
     QFrame *frame;
-    QLabel *label;
     QPushButton *shezhi;
     QPushButton *ledpwm;
     QPushButton *timebutton;
@@ -47,13 +45,6 @@ public:
         frame->setStyleSheet(QString::fromUtf8("QFrame#frame{background-image: url(:/aaa.jpg);}"));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
-        label = new QLabel(frame);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(60, 340, 200, 100));
-        label->setMinimumSize(QSize(200, 100));
-        label->setMaximumSize(QSize(200, 100));
-        label->setStyleSheet(QString::fromUtf8("QLabel{background-color: rgb(114, 159, 207);font-size:24px;}\n"
-""));
         shezhi = new QPushButton(frame);
         shezhi->setObjectName(QString::fromUtf8("shezhi"));
         shezhi->setGeometry(QRect(160, 150, 100, 100));
@@ -143,7 +134,6 @@ public:
     void retranslateUi(QWidget *Widget)
     {
         Widget->setWindowTitle(QApplication::translate("Widget", "Widget", nullptr));
-        label->setText(QString());
         shezhi->setText(QString());
         ledpwm->setText(QString());
         timebutton->setText(QString());

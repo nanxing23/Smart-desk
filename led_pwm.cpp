@@ -37,12 +37,3 @@ void led_pwm::on_closeled_clicked()
 }
 
 
-void led_pwm::on_return_2_clicked()
-{
-    mymain->setVisible(true);
-    my_set->setVisible(false);
-    my_ledp->setVisible(false);
-    my_capture->setVisible(false);
-    my_timer->setVisible(false);
-    my_aichat->setVisible(false);
-}

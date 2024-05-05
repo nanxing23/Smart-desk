@@ -17,5 +17,6 @@
         <file>icons/indicator2.png</file>
         <file>image/music.png</file>
         <file>image/file.png</file>
+        <file>image/ydpushbuton.png</file>
     </qresource>
 </RCC>

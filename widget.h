@@ -16,8 +16,9 @@
 #include "capture.h"
 #include "aichat.h"
 #include "file.h"
+#include "ydragbutton.h"
 #include "slidepage.h"
-
+extern bool captureflash;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -33,7 +34,7 @@ public:
 
 signals:
     void sendwidget1(bool widgetchecked);/*按下摄像头按键直接开启摄像头，返回桌面自动关闭摄像头*/
-
+    void sendcputemp(QString temp);
 private slots:
 
     void updateOutput();

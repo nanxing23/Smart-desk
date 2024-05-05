@@ -18,7 +18,6 @@ public:
     ~led_pwm();
 
 private slots:
-    void on_return_2_clicked();
 
     void on_ledslider_valueChanged(int value);/*ledpwm控制亮度*/
 

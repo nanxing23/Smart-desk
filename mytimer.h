@@ -32,7 +32,6 @@ private slots:
 
     void on_ok_clicked();
 
-    void on_return_2_clicked();
     void showouttimeslot();/*闹钟时间到用来弹出提示窗口*/
     void outtimecloseslot();/*用来关闭提示窗口*/
     void outtimedelayslot();/*稍后提醒*/

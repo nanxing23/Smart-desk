@@ -5,13 +5,13 @@
 #include "mymain.h"     /*全局变量*/
 #include <QDebug>
 
+bool captureflash = 0;
 
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
-    ui->label->setAlignment(Qt::AlignCenter);/*设置文本居中*/
     ui->time->setText("wait…");
     connect(timer_calendar,SIGNAL(timeout()),this,SLOT(timerUpdate()));//连接槽函数
     timer_calendar->start(1000);//每一秒溢出一次进入槽函数
@@ -45,12 +45,12 @@ void Widget::updateOutput(){
     QString cpu = "CPU";
     QString led = "LED";
     text.chop(1);
-    if(text.indexOf(cpu) != -1 )ui->label->setText(text);// 更新标签文本
-    
-    if(text.indexOf(led) != -1 ){
-        
+    if(text.indexOf(cpu) != -1 ){
+        emit sendcputemp(text);//向设置页面发送ＣＰＵ温度
     }
-    ui->label->setAlignment(Qt::AlignCenter);
+    if(text.indexOf(led) != -1 ){
+
+    }
 
 }
 
@@ -62,7 +62,7 @@ void Widget::on_shezhi_clicked()/*触发按键转移到设置*/
     my_capture->setVisible(false);
     my_timer->setVisible(false);
     my_aichat->setVisible(false);
-
+    my_file->setVisible(false);
 
 }
 
@@ -75,6 +75,7 @@ void Widget::on_ledpwm_clicked()/*触发按键转移到ｌｅｄ灯*/
     my_capture->setVisible(false);
     my_timer->setVisible(false);
     my_aichat->setVisible(false);
+    my_file->setVisible(false);
 
 }
 
@@ -88,6 +89,7 @@ void Widget::on_timebutton_clicked()
     my_capture->setVisible(false);
     my_timer->setVisible(true);
     my_aichat->setVisible(false);
+    my_file->setVisible(false);
 
 }
 void Widget::on_time_clicked()
@@ -98,6 +100,7 @@ void Widget::on_time_clicked()
     my_capture->setVisible(false);
     my_timer->setVisible(true);
     my_aichat->setVisible(false);
+    my_file->setVisible(false);
 
 }
 void Widget::on_near_clicked()
@@ -108,6 +111,7 @@ void Widget::on_near_clicked()
     my_capture->setVisible(false);
     my_timer->setVisible(true);
     my_aichat->setVisible(false);
+    my_file->setVisible(false);
 
 }
 void Widget::on_week_clicked()
@@ -118,20 +122,22 @@ void Widget::on_week_clicked()
     my_capture->setVisible(false);
     my_timer->setVisible(true);
     my_aichat->setVisible(false);
+    my_file->setVisible(false);
 
 }
 
 
 void Widget::on_capturebutton_clicked()/*按键进入摄像头*/
 {
-    bool n = 1;
     mymain->setVisible(false);
     my_set->setVisible(false);
     my_ledp->setVisible(false);
     my_capture->setVisible(true);
     my_timer->setVisible(false);
     my_aichat->setVisible(false);
-    emit sendwidget1(n);
+    my_file->setVisible(false);
+    captureflash = 1;
+    emit my_capture->sendwidget(captureflash);
 }
 
 void Widget::on_aichat_clicked()
@@ -142,6 +148,7 @@ void Widget::on_aichat_clicked()
     my_capture->setVisible(false);
     my_timer->setVisible(false);
     my_aichat->setVisible(true);
+    my_file->setVisible(false);
 }
 
 

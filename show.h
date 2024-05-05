@@ -20,6 +20,9 @@ public:
     Show(QWidget *parent = nullptr);
     ~Show();
 
+private slots:
+
+    void gohome();
 //    Widget *mymain;/*主界面*/
 private:
     set *ser_t;

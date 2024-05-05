@@ -69,7 +69,8 @@ SOURCES       = aichat.cpp \
 		show.cpp \
 		slidepage.cpp \
 		timeselect.cpp \
-		widget.cpp qrc_res.cpp \
+		widget.cpp \
+		ydragbutton.cpp qrc_res.cpp \
 		moc_aichat.cpp \
 		moc_asr.cpp \
 		moc_asryin.cpp \
@@ -85,7 +86,8 @@ SOURCES       = aichat.cpp \
 		moc_show.cpp \
 		moc_slidepage.cpp \
 		moc_timeselect.cpp \
-		moc_widget.cpp
+		moc_widget.cpp \
+		moc_ydragbutton.cpp
 OBJECTS       = aichat.o \
 		asr.o \
 		asryin.o \
@@ -104,6 +106,7 @@ OBJECTS       = aichat.o \
 		slidepage.o \
 		timeselect.o \
 		widget.o \
+		ydragbutton.o \
 		qrc_res.o \
 		moc_aichat.o \
 		moc_asr.o \
@@ -120,7 +123,8 @@ OBJECTS       = aichat.o \
 		moc_show.o \
 		moc_slidepage.o \
 		moc_timeselect.o \
-		moc_widget.o
+		moc_widget.o \
+		moc_ydragbutton.o
 DIST          = /opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi/usr/lib/mkspecs/features/spec_pre.prf \
 		/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi/usr/lib/mkspecs/common/unix.conf \
 		/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi/usr/lib/mkspecs/common/linux.conf \
@@ -315,7 +319,8 @@ DIST          = /opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/cortexa7hf-neon-poky-linu
 		show.h \
 		slidepage.h \
 		timeselect.h \
-		widget.h aichat.cpp \
+		widget.h \
+		ydragbutton.h aichat.cpp \
 		asr.cpp \
 		asryin.cpp \
 		audiorecorder.cpp \
@@ -332,7 +337,8 @@ DIST          = /opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/cortexa7hf-neon-poky-linu
 		show.cpp \
 		slidepage.cpp \
 		timeselect.cpp \
-		widget.cpp
+		widget.cpp \
+		ydragbutton.cpp
 QMAKE_TARGET  = led
 DESTDIR       = 
 TARGET        = led
@@ -719,8 +725,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents res.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi/usr/lib/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents aichat.h asr.h asryin.h audiorecorder.h capture.h capture_thread.h file.h led_pwm.h myclock.h mymain.h myslider.h mytimer.h ocr.h set.h show.h slidepage.h timeselect.h widget.h $(DISTDIR)/
-	$(COPY_FILE) --parents aichat.cpp asr.cpp asryin.cpp audiorecorder.cpp capture.cpp capture_thread.cpp file.cpp led_pwm.cpp main.cpp myclock.cpp myslider.cpp mytimer.cpp ocr.cpp set.cpp show.cpp slidepage.cpp timeselect.cpp widget.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents aichat.h asr.h asryin.h audiorecorder.h capture.h capture_thread.h file.h led_pwm.h myclock.h mymain.h myslider.h mytimer.h ocr.h set.h show.h slidepage.h timeselect.h widget.h ydragbutton.h $(DISTDIR)/
+	$(COPY_FILE) --parents aichat.cpp asr.cpp asryin.cpp audiorecorder.cpp capture.cpp capture_thread.cpp file.cpp led_pwm.cpp main.cpp myclock.cpp myslider.cpp mytimer.cpp ocr.cpp set.cpp show.cpp slidepage.cpp timeselect.cpp widget.cpp ydragbutton.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents capture.ui file.ui led_pwm.ui mytimer.ui set.ui widget.ui $(DISTDIR)/
 
 
@@ -755,6 +761,7 @@ qrc_res.cpp: res.qrc \
 		image/music.png \
 		image/file.png \
 		image/switch\ close.png \
+		image/ydpushbuton.png \
 		image/capture.png \
 		image/led0.png \
 		image/switchopen.png \
@@ -775,9 +782,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi/usr/lib/mkspecs/features/data/dummy.cpp
 	arm-poky-linux-gnueabi-g++  -march=armv7ve -mfpu=neon  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi -pipe --sysroot=/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi -O2 -DLINUX=1 -DLINUX=1 -DLINUX=1 -DLINUX=1 -DLINUX=1 -DLINUX=1 -std=gnu++11 -Wall -W -dM -E -o moc_predefs.h /opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi/usr/lib/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_aichat.cpp moc_asr.cpp moc_asryin.cpp moc_audiorecorder.cpp moc_capture.cpp moc_capture_thread.cpp moc_file.cpp moc_led_pwm.cpp moc_myclock.cpp moc_mytimer.cpp moc_ocr.cpp moc_set.cpp moc_show.cpp moc_slidepage.cpp moc_timeselect.cpp moc_widget.cpp
+compiler_moc_header_make_all: moc_aichat.cpp moc_asr.cpp moc_asryin.cpp moc_audiorecorder.cpp moc_capture.cpp moc_capture_thread.cpp moc_file.cpp moc_led_pwm.cpp moc_myclock.cpp moc_mytimer.cpp moc_ocr.cpp moc_set.cpp moc_show.cpp moc_slidepage.cpp moc_timeselect.cpp moc_widget.cpp moc_ydragbutton.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_aichat.cpp moc_asr.cpp moc_asryin.cpp moc_audiorecorder.cpp moc_capture.cpp moc_capture_thread.cpp moc_file.cpp moc_led_pwm.cpp moc_myclock.cpp moc_mytimer.cpp moc_ocr.cpp moc_set.cpp moc_show.cpp moc_slidepage.cpp moc_timeselect.cpp moc_widget.cpp
+	-$(DEL_FILE) moc_aichat.cpp moc_asr.cpp moc_asryin.cpp moc_audiorecorder.cpp moc_capture.cpp moc_capture_thread.cpp moc_file.cpp moc_led_pwm.cpp moc_myclock.cpp moc_mytimer.cpp moc_ocr.cpp moc_set.cpp moc_show.cpp moc_slidepage.cpp moc_timeselect.cpp moc_widget.cpp moc_ydragbutton.cpp
 moc_aichat.cpp: aichat.h \
 		audiorecorder.h \
 		asryin.h \
@@ -899,6 +906,11 @@ moc_widget.cpp: widget.h \
 		moc_predefs.h \
 		/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/x86_64-pokysdk-linux/usr/bin/moc
 	/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/x86_64-pokysdk-linux/usr/bin/moc $(DEFINES) --include /home/syf/linux/IMX6ULL/qt/led/moc_predefs.h -I/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++ -I/home/syf/linux/IMX6ULL/qt/led -I/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi/usr/include/QtMultimedia -I/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi/usr/include/QtWidgets -I/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi/usr/include/QtGui -I/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi/usr/include/QtNetwork -I/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi/usr/include/QtCore -I/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi/usr/include/c++/5.3.0 -I/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi/usr/include/c++/5.3.0/arm-poky-linux-gnueabi -I/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi/usr/include/c++/5.3.0/backward -I/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/x86_64-pokysdk-linux/usr/lib/arm-poky-linux-gnueabi/gcc/arm-poky-linux-gnueabi/5.3.0/include -I/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/x86_64-pokysdk-linux/usr/lib/arm-poky-linux-gnueabi/gcc/arm-poky-linux-gnueabi/5.3.0/include-fixed -I/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi/usr/include widget.h -o moc_widget.cpp
+
+moc_ydragbutton.cpp: ydragbutton.h \
+		moc_predefs.h \
+		/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/x86_64-pokysdk-linux/usr/bin/moc
+	/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/x86_64-pokysdk-linux/usr/bin/moc $(DEFINES) --include /home/syf/linux/IMX6ULL/qt/led/moc_predefs.h -I/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++ -I/home/syf/linux/IMX6ULL/qt/led -I/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi/usr/include/QtMultimedia -I/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi/usr/include/QtWidgets -I/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi/usr/include/QtGui -I/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi/usr/include/QtNetwork -I/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi/usr/include/QtCore -I/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi/usr/include/c++/5.3.0 -I/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi/usr/include/c++/5.3.0/arm-poky-linux-gnueabi -I/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi/usr/include/c++/5.3.0/backward -I/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/x86_64-pokysdk-linux/usr/lib/arm-poky-linux-gnueabi/gcc/arm-poky-linux-gnueabi/5.3.0/include -I/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/x86_64-pokysdk-linux/usr/lib/arm-poky-linux-gnueabi/gcc/arm-poky-linux-gnueabi/5.3.0/include-fixed -I/opt/fsl-imx-x11/4.1.15-2.1.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi/usr/include ydragbutton.h -o moc_ydragbutton.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -1179,8 +1191,12 @@ widget.o: widget.cpp widget.h \
 		file.h \
 		slidepage.h \
 		ui_widget.h \
+		ydragbutton.h \
 		mymain.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o widget.o widget.cpp
+
+ydragbutton.o: ydragbutton.cpp ydragbutton.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ydragbutton.o ydragbutton.cpp
 
 qrc_res.o: qrc_res.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_res.o qrc_res.cpp
@@ -1232,6 +1248,9 @@ moc_timeselect.o: moc_timeselect.cpp
 
 moc_widget.o: moc_widget.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_widget.o moc_widget.cpp
+
+moc_ydragbutton.o: moc_ydragbutton.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_ydragbutton.o moc_ydragbutton.cpp
 
 ####### Install
 

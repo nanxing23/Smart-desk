@@ -36,7 +36,8 @@ SOURCES += \
     show.cpp \
     slidepage.cpp \
     timeselect.cpp \
-    widget.cpp
+    widget.cpp \
+    ydragbutton.cpp
 
 HEADERS += \
     aichat.h \
@@ -56,7 +57,8 @@ HEADERS += \
     show.h \
     slidepage.h \
     timeselect.h \
-    widget.h
+    widget.h \
+    ydragbutton.h
 
 FORMS += \
     capture.ui \

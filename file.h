@@ -34,9 +34,6 @@ private slots:
     /* 关闭文本文件 */
     void closeFile();
 
-    /*返回桌面*/
-    void returnhome();
-
     void fileokopenopenfile();/*打开文件*/
 
     void closeFileokclose();/*关闭弹窗*/

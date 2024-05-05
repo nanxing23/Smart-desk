@@ -97,16 +97,6 @@ void Mytimer::on_ok_clicked()
     }
     ui->settime->hide();
 }
-
-void Mytimer::on_return_2_clicked()
-{
-    mymain->setVisible(true);
-    my_set->setVisible(false);
-    my_ledp->setVisible(false);
-    my_capture->setVisible(false);
-    my_timer->setVisible(false);
-    my_aichat->setVisible(false);
-}
 void Mytimer::showouttimeslot(){
     qDebug()<< "showouttimeslot" <<endl;
     outtime->show();

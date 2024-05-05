@@ -24,7 +24,6 @@ class Ui_set
 public:
     QFrame *frame;
     QSlider *brightness;
-    QPushButton *return_2;
     QPushButton *zzjc;
     QLabel *label;
     QLabel *label_2;
@@ -59,12 +58,6 @@ public:
         brightness->setPageStep(1);
         brightness->setValue(0);
         brightness->setOrientation(Qt::Vertical);
-        return_2 = new QPushButton(frame);
-        return_2->setObjectName(QString::fromUtf8("return_2"));
-        return_2->setGeometry(QRect(-1, -2, 111, 101));
-        return_2->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"	border-image: url(:/image/return.png);\n"
-"}"));
         zzjc = new QPushButton(frame);
         zzjc->setObjectName(QString::fromUtf8("zzjc"));
         zzjc->setGeometry(QRect(30, 110, 150, 100));
@@ -136,7 +129,6 @@ public:
     void retranslateUi(QWidget *set)
     {
         set->setWindowTitle(QApplication::translate("set", "Form", nullptr));
-        return_2->setText(QString());
         zzjc->setText(QString());
         label->setText(QApplication::translate("set", "\345\235\220\345\247\277\346\243\200\346\265\213", nullptr));
         label_2->setText(QString());

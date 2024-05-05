@@ -28,9 +28,6 @@ File::File(QWidget *parent) :
     textEdit = new QTextEdit(this);
     openPushButton = new QPushButton("打开",this);
     closePushButton = new QPushButton("关闭",this);//200 500 430
-    return_1 = new QPushButton(this);//200 500 430
-    return_1->setStyleSheet("QPushButton{border-image: url(:/image/return.png);}");
-    return_1->setGeometry(-1,-2,111,101);
     textEdit->setGeometry(5,5,790,420);
     openPushButton->setGeometry(200,430,100,50);
     closePushButton->setGeometry(500,430,100,50);
@@ -49,8 +46,6 @@ File::File(QWidget *parent) :
             this, SLOT(openFile()));
     connect(closePushButton, SIGNAL(clicked()),
             this, SLOT(closeFile()));
-    connect(return_1, SIGNAL(clicked()),
-            this, SLOT(returnhome()));
     connect(fileokopen, SIGNAL(clicked()),
             this, SLOT(fileokopenopenfile()));
     connect(fileokclose, SIGNAL(clicked()),
@@ -179,16 +174,6 @@ void File::closeFile()
         openPushButton->setEnabled(true);
         closePushButton->setEnabled(false);
     }
-}
-
-void File::returnhome(){
-    mymain->setVisible(true);
-    my_set->setVisible(false);
-    my_ledp->setVisible(false);
-    my_capture->setVisible(false);
-    my_timer->setVisible(false);
-    my_aichat->setVisible(false);
-    my_file->setVisible(false);
 }
 
 

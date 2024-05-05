@@ -28,7 +28,6 @@ public:
     QWidget *settime;
     QPushButton *close;
     QPushButton *ok;
-    QPushButton *return_2;
     QWidget *JiShi;
 
     void setupUi(QWidget *Mytimer)
@@ -101,18 +100,7 @@ public:
         ok->setGeometry(QRect(0, 150, 100, 50));
         ok->setMinimumSize(QSize(100, 50));
         ok->setMaximumSize(QSize(95, 50));
-        return_2 = new QPushButton(NaoZhong);
-        return_2->setObjectName(QString::fromUtf8("return_2"));
-        return_2->setGeometry(QRect(700, 320, 111, 101));
-        return_2->setMinimumSize(QSize(111, 101));
-        return_2->setMaximumSize(QSize(111, 101));
-        return_2->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"	border-image: url(:/image/return.png);\n"
-"}"));
         tabWidget->addTab(NaoZhong, QString());
-        pushButton->raise();
-        return_2->raise();
-        settime->raise();
         JiShi = new QWidget();
         JiShi->setObjectName(QString::fromUtf8("JiShi"));
         JiShi->setStyleSheet(QString::fromUtf8("QWidget{\n"
@@ -134,7 +122,6 @@ public:
         pushButton->setText(QString());
         close->setText(QApplication::translate("Mytimer", "\345\205\263\351\227\255", nullptr));
         ok->setText(QApplication::translate("Mytimer", "\347\241\256\350\256\244", nullptr));
-        return_2->setText(QString());
         tabWidget->setTabText(tabWidget->indexOf(NaoZhong), QApplication::translate("Mytimer", "\351\227\271\351\222\237", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(JiShi), QApplication::translate("Mytimer", "\350\256\241\346\227\266", nullptr));
     } // retranslateUi

@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_set_t {
     QByteArrayData data[10];
-    char stringdata0[129];
+    char stringdata0[121];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -35,15 +35,15 @@ QT_MOC_LITERAL(0, 0, 3), // "set"
 QT_MOC_LITERAL(1, 4, 11), // "sendjcflash"
 QT_MOC_LITERAL(2, 16, 0), // ""
 QT_MOC_LITERAL(3, 17, 5), // "flash"
-QT_MOC_LITERAL(4, 23, 19), // "on_return_2_clicked"
-QT_MOC_LITERAL(5, 43, 26), // "on_brightness_valueChanged"
-QT_MOC_LITERAL(6, 70, 5), // "value"
-QT_MOC_LITERAL(7, 76, 28), // "on_brightness_sliderReleased"
-QT_MOC_LITERAL(8, 105, 15), // "on_zzjc_clicked"
-QT_MOC_LITERAL(9, 121, 7) // "checked"
+QT_MOC_LITERAL(4, 23, 11), // "showcputemp"
+QT_MOC_LITERAL(5, 35, 26), // "on_brightness_valueChanged"
+QT_MOC_LITERAL(6, 62, 5), // "value"
+QT_MOC_LITERAL(7, 68, 28), // "on_brightness_sliderReleased"
+QT_MOC_LITERAL(8, 97, 15), // "on_zzjc_clicked"
+QT_MOC_LITERAL(9, 113, 7) // "checked"
 
     },
-    "set\0sendjcflash\0\0flash\0on_return_2_clicked\0"
+    "set\0sendjcflash\0\0flash\0showcputemp\0"
     "on_brightness_valueChanged\0value\0"
     "on_brightness_sliderReleased\0"
     "on_zzjc_clicked\0checked"
@@ -67,16 +67,16 @@ static const uint qt_meta_data_set[] = {
        1,    1,   39,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    0,   42,    2, 0x08 /* Private */,
-       5,    1,   43,    2, 0x08 /* Private */,
-       7,    0,   46,    2, 0x08 /* Private */,
-       8,    1,   47,    2, 0x08 /* Private */,
+       4,    1,   42,    2, 0x08 /* Private */,
+       5,    1,   45,    2, 0x08 /* Private */,
+       7,    0,   48,    2, 0x08 /* Private */,
+       8,    1,   49,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Bool,    3,
 
  // slots: parameters
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void, QMetaType::Int,    6,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Bool,    9,
@@ -91,7 +91,7 @@ void set::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->sendjcflash((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 1: _t->on_return_2_clicked(); break;
+        case 1: _t->showcputemp((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 2: _t->on_brightness_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 3: _t->on_brightness_sliderReleased(); break;
         case 4: _t->on_zzjc_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;

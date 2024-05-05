@@ -29,6 +29,7 @@ public:
 
 private:
 
+    QWidget *my_back;
     /* 主Widget */
     QWidget *mainWidget;
 
@@ -75,7 +76,6 @@ private slots:
     void onTimer1TimeOut();
     void onTimer2TimeOut();
     void onTimer3TimeOut();
-    void on_return_2_clicked();
     void onAsrReadyData(QString);
     void onAsrReadyDatas(QString);
 

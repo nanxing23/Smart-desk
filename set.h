@@ -24,8 +24,8 @@ public:
 
 private slots:
 
-    void on_return_2_clicked();
-
+    /* 显示ｃｐｕ温度 */
+    void showcputemp(QString);
     void on_brightness_valueChanged(int value);
 
     void on_brightness_sliderReleased();
